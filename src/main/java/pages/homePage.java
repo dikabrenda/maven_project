@@ -1,13 +1,13 @@
 package pages;
 
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.pagefactory.AjaxElementLocatorFactory;
-import org.testng.Assert;
 
-public class homePage{
+import element.loginPageElem;
+
+import static helper.testngHelper.*;
+public class homePage extends loginPageElem{
     
     WebDriver driver;
 
@@ -16,46 +16,15 @@ public class homePage{
         PageFactory.initElements(new AjaxElementLocatorFactory(driver, 20), this);
     }
 
-    @FindBy(xpath = "//button[normalize-space()='Masuk']")
-    WebElement masuk;
-
-    @FindBy(xpath = "//button[normalize-space()='Karir']")
-    WebElement karir;
-
-    @FindBy(xpath = "//button[normalize-space()='Produk']")
-    WebElement product;
-
-
-    public void assertionMasuk() {
-        String actualText = masuk.getText();
-        String expectedText = "Masuk";
-        Assert.assertEquals(actualText, expectedText);
+    public void setUsername(String username) {
+        enterText(USERNAME_FILLED_BOX, username);
     }
 
-    public void assertionKarir() {
-        String actualText = karir.getText();
-        String expectedText = "Karir";
-        Assert.assertEquals(actualText, expectedText);
+    public void setPassword(String pwd) {
+        enterText(PASSWORD_FILLED_BOX, pwd);
     }
 
-    public void assertionProduct(){
-        String actualText = product.getText();
-        String expectedText = "Product";
-        Assert.assertEquals(actualText, expectedText);
-    }
-
-    public void clickOnMasuk() {
-        assertionMasuk();
-        masuk.click();
-    }
-
-    public void clickOnKarir() {
-        assertionKarir();
-        karir.click();
-    }
-
-    public void clickOnProduct() {
-        assertionProduct();
-        product.click();
+    public void clickLoggedIn() {
+        LOGIN_BUTTON.click();
     }
 }

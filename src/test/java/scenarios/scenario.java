@@ -6,18 +6,10 @@ import config.baseClass;
 
 public class scenario extends baseClass {
     
-    @Test(priority = 1)
-    public void clickOnMasuk() {
-        pages.clickOnMasuk();
-    }
-
-    @Test(priority = 2)
-    public void clickOnCareer() {
-        pages.clickOnKarir();
-    }
-
-    @Test(priority = 3)
-    public void clickOnProduct() {
-        pages.clickOnProduct();
+    @Test()
+    public void loginUser() {
+        pages.setUsername("Admin");
+        pages.setPassword("admin123");
+        pages.clickLoggedIn();
     }
 }

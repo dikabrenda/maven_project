@@ -3,7 +3,7 @@
 
 <suite name="Portofolio" verbose="5" guice-stage="DEVELOPMENT" allow-return-values="true"  preserve-order="true"  parallel="false">
     
-  <test name="Feature User Profile" thread-count="5" verbose="5">
+  <test name="Portofolio" thread-count="5" verbose="5">
 
       <classes>
         <class name="scenarios.scenario" />
