@@ -21,10 +21,10 @@ jobs:
         java-version: '11'
         distribution: 'adopt'
 
+    - run: cp env/env.sample .env
+
     - name: Build with Maven
-      run: |
-        - cp env/env.sample .env
-        - mvn clean install
+      run: mvn clean install
 
     - name: Login to DockerHub
       uses: docker/login-action@v1 
