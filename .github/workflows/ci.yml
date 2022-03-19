@@ -23,7 +23,6 @@ jobs:
 
     - name: Build with Maven
       run: |
-        cp -a env/env.sample .env
         mvn clean test
 
     - name: Login to DockerHub
