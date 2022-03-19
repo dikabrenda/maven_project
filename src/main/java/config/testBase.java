@@ -15,7 +15,7 @@ public class testBase implements constant {
             case "Chrome":
                 System.setProperty(WEBDRIVER_CHROME, CHROME_PATH);
                 ChromeOptions options = new ChromeOptions();
-                options.addArguments("--incognito"); // headless //window-size=1920,1080
+                options.addArguments("--incognito", "headless", "window-size=1920,1080");
                 driver = new ChromeDriver(options);
                 break;
 
